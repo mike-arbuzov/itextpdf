@@ -1,3 +1,10 @@
+### iText 5.5.14 Fork
+
+Changes made vs iText 5.5.14 Fork:
+
+- Support for color converter interface allowing dual color representation iText BaseColor and AWT Color
+- build.sh for local maven build
+
 ### **PLEASE NOTE: iText5 is EOL, and has been replaced by [iText7][itext7]**
  
 We HIGHLY recommend customers use iText7 for new projects, and to consider moving existing projects from iText5 to iText7 to benefit from the many improvements such as:
