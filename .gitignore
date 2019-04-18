@@ -152,3 +152,7 @@ nbactions*.xml
 .pmdruleset.xml
 .checkstyle
 .vagrant/
+
+# runtime and utils
+build.sh
+mvn.log

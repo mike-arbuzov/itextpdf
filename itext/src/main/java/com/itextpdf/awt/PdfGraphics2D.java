@@ -103,6 +103,7 @@ import javax.imageio.stream.ImageOutputStream;
 
 import com.itextpdf.awt.geom.PolylineShape;
 import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.ColorProvider;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.ByteBuffer;
 import com.itextpdf.text.pdf.CMYKColor;
@@ -1687,7 +1688,9 @@ public class PdfGraphics2D extends Graphics2D {
     }
 
     public static BaseColor prepareColor(Color color) {
-        if (color.getColorSpace().getType() == ColorSpace.TYPE_CMYK) {
+    	if (color instanceof ColorProvider) {
+    	   return ((ColorProvider)color).getBaseColor();
+    	} else if (color.getColorSpace().getType() == ColorSpace.TYPE_CMYK) {
            float[] comp = color.getColorComponents(null);
            return new CMYKColor(comp[0], comp[1], comp[2], comp[3]);
         } else {
